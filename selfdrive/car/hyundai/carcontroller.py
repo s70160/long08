@@ -16,7 +16,7 @@ VisualAlert = car.CarControl.HUDControl.VisualAlert
 
 # Accel Hard limits
 ACCEL_HYST_GAP = 0.1  # don't change accel command for small oscillations within this value
-ACCEL_MAX = 2.  # 2.0 m/s2
+ACCEL_MAX = 1.5  # 1.5 m/s2
 ACCEL_MIN = -3.5  # 3.5   m/s2
 ACCEL_SCALE = 1.
 
@@ -203,7 +203,7 @@ class CarController():
       self.vdiff = 0.
       self.resumebuttoncnt = 0
 
-    if CS.out.vEgo < 2.:
+    if CS.out.vEgo < 5.:
       self.sm.update(0)
       long_control_state = self.sm['controlsState'].longControlState
       self.acc_standstill = True if long_control_state == LongCtrlState.stopping else False
