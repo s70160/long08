@@ -273,11 +273,11 @@ class CarInterface(CarInterfaceBase):
       self.visiononlyWarning = True
 
 
-      buttonEvents.append(be)
-      be.pressed = bool(self.CS.cruise_main_button)
-      be.type = ButtonType.altButton3
-    if self.CS.cruise_main_button != self.CS.prev_cruise_main_button:
-      be = car.CarState.ButtonEvent.new_message()
+      
+     
+      
+    
+      
 
     buttonEvents = []
     if self.CS.cruise_buttons != self.CS.prev_cruise_buttons:
