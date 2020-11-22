@@ -203,12 +203,12 @@ class CarController():
       self.vdiff = 0.
       self.resumebuttoncnt = 0
 
-#   if CS.out.vEgo < 5.:
-#      self.sm.update(0)
-#      long_control_state = self.sm['controlsState'].longControlState
-#      self.acc_standstill = True if long_control_state == LongCtrlState.stopping else False
-#   else:
-#      self.acc_standstill = False
+    if CS.out.vEgo < 10.:
+       self.sm.update(0)
+       long_control_state = self.sm['controlsState'].longControlState
+       self.acc_standstill = True if long_control_state == LongCtrlState.stopping else False
+    else:
+       self.acc_standstill = False
 
     if lead_visible:
       self.lead_visible = True
