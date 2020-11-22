@@ -447,7 +447,7 @@ def manager_thread():
   cloudlog.info({"environ": os.environ})
 
   # save boot log
-  #subprocess.call(["./loggerd", "--bootlog"], cwd=os.path.join(BASEDIR, "selfdrive/loggerd"))
+  subprocess.call(["./loggerd", "--bootlog"], cwd=os.path.join(BASEDIR, "selfdrive/loggerd"))
 
   params = Params()
 
@@ -594,7 +594,7 @@ def main():
 
   if os.getenv("PREPAREONLY") is not None:
     return
-  del managed_processes['loggerd']
+  #del managed_processes['loggerd']
   # SystemExit on sigterm
   signal.signal(signal.SIGTERM, lambda signum, frame: sys.exit(1))
 
